@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.item {
+  width: 56%;
+  overflow: visible;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.div {
+  background: linear-gradient(135deg, #e09, #d0e);
+}
+
+@layer base {
+  a {
+    @apply flex items-center justify-center gap-3 flex-row-reverse  hover:text-gray-500;
+  }
+}

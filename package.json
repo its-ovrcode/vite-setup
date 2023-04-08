@@ -4,16 +4,21 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.12.0",
     "framer-motion": "^10.2.5",
+    "framer-motion-3d": "^10.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
-    "react-router-dom": "^6.9.0"
+    "react-router-dom": "^6.10.0",
+    "react-scroll": "^1.8.9",
+    "react-scroll-to": "^3.0.0-beta.6",
+    "three": "^0.151.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

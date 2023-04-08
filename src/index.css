@@ -1,24 +1,197 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&display=swap');
+/* Called font-primary */
+@font-face {
+  font-family: 'Goshco';
+
+  src: url('./assets/fonts/Goshco.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+/* TODO: Called font-sans */
+/* Regular */
+/* Bold */
+
+@font-face {
+  font-family: 'Google Sans Regular';
+  src: url('./assets/fonts/GoogleSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Google Sans Bold';
+  src: url('./assets/fonts/GoogleSans-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Google Sans Medium';
+  src: url('./assets/fonts/GoogleSans-Medium.woff') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.item {
-  width: 56%;
-  overflow: visible;
-  stroke: #fff;
-  stroke-width: 2;
-  stroke-linejoin: round;
-  stroke-linecap: round;
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* For Testing Only */
+  /* outline: 1px solid red; */
 }
 
-.div {
-  background: linear-gradient(135deg, #e09, #d0e);
+html {
+  @apply scroll-smooth  md:scroll-auto font-sans;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow: overlay;
+
+  /* custom cursor */
+  cursor: url(./assets/cursor.webp) 10 10, auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.image {
+  cursor: url(./assets/student.webp) 60 60, auto;
+}
+
+button {
+  cursor: url(./assets/pointer.webp) 30 30, pointer;
+  transition: all 0.3s ease-in-out;
+  /* General Style for Button */
+  @apply min-w-[180px] px-10 flex items-center justify-center gap-3 text-lg py-4 font-sans font-semibold  transition-all ease-in-out;
 }
 
 @layer base {
-  a {
-    @apply flex items-center justify-center gap-3 flex-row-reverse  hover:text-gray-500;
+  section {
+    @apply px-[40px];
   }
+  a {
+    @apply flex items-center font-bold cursor-pointer justify-center gap-3 flex-row-reverse  hover:text-gray-500;
+  }
+}
+
+@layer components {
+  /* BreakPoints for Mobile Devices */
+  br.mobile-br {
+    @apply md:hidden;
+  }
+  /* BreakPoints for Desktop */
+  br.desktop-br {
+    @apply hidden md:block;
+  }
+
+  .container-main {
+    @apply relative flex flex-col justify-center  items-center  min-h-screen h-full mb-16 mt-6 px-[40px] lg:px-[40px] w-full overflow-hidden;
+  }
+
+  /* Hero Profile Images */
+  .profile {
+    @apply w-[150px] lg:w-[300px];
+  }
+
+  .heading-1 {
+    @apply text-[5rem]  z-20 lg:text-[6.2rem] text-center  font-primary;
+  }
+
+  .heading-2 {
+    @apply font-primary  z-20 leading-[1.2em] text-center lg:text-left lg:text-[2.8rem] text-[3.8rem] truncate;
+  }
+  .heading-3 {
+    @apply lg:text-6xl text-center font-primary  text-5xl flex flex-col items-center justify-center  font-semibold;
+  }
+  .heading-pink {
+    @apply text-thePink;
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.card-img {
+  background-image: url(./assets/Hero-card.svg);
+}
+
+.background-img {
+  background-color: transparent;
+  z-index: 200;
+  background-image: url(./assets/WorhHole.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 100%;
+
+  background-position: center;
+}
+
+/* Change the scroll bar color */
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary scroll-smooth;
+}
+
+::selection {
+  @apply bg-primary;
+}
+.float-1 {
+  animation: float 6s ease-in-out infinite,
+    spin 3s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.float-2 {
+  animation: float 6s cubic-bezier(0.23, 1, 0.32, 1) infinite,
+    rotate 4s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  animation-delay: 0.5s;
+  transform-origin: center;
+}
+
+.float-3 {
+  animation: float 6s ease-in-out infinite, zigzag 5s ease-in-out infinite;
+  animation-delay: 1.5s;
+  transform-origin: center;
+}
+
+.float-4 {
+  animation: float 6s ease-in-out infinite,
+    depth 6s ease-in-out infinite alternate;
+  animation-delay: 3s;
+  transform-origin: center;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(-2px);
+  }
+  50% {
+    transform: translateY(5px) translateX(0px);
+  }
+  75% {
+    transform: translateY(-10px) translateX(2px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+.about-bg {
+  background-image: url(./assets/About-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
 }
